@@ -5,14 +5,26 @@ const cors = require('cors');
 const { v4: uuidv4 } = require('uuid');
 
 const app = express();
-app.use(cors());
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'https://techweb-nu.vercel.app',
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST'],
+  credentials: true,
+}));
 app.use(express.json());
 
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: '*',
-    methods: ['GET', 'POST']
+    origin: allowedOrigins,
+    methods: ['GET', 'POST'],
+    credentials: true,
   }
 });
 

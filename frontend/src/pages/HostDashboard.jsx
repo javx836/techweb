@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import socket from '../socket'
+import socket, { BACKEND_URL } from '../socket'
 import Timer from '../components/Timer'
 import Leaderboard from '../components/Leaderboard'
 import Confetti from '../components/Confetti'
@@ -160,7 +160,7 @@ function HostDashboard() {
   }
 
   const exportResults = () => {
-    window.open(`http://localhost:3001/api/export/${sessionCode}`, '_blank')
+    window.open(`${BACKEND_URL}/api/export/${sessionCode}`, '_blank')
   }
 
   const addQuestion = () => {
