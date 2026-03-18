@@ -1,0 +1,122 @@
+.student-join {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px;
+}
+
+.student-join-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.join-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: float 8s ease-in-out infinite;
+}
+
+.join-orb-1 {
+  width: 350px;
+  height: 350px;
+  background: var(--secondary);
+  top: -80px;
+  left: -80px;
+}
+
+.join-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--primary);
+  bottom: -60px;
+  right: -60px;
+  animation-delay: 3s;
+}
+
+.student-join-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 16px;
+  transition: color var(--transition-fast);
+  font-family: var(--font-body);
+}
+
+.back-btn:hover {
+  color: var(--primary);
+}
+
+.join-card {
+  padding: 40px 32px;
+  border-radius: var(--radius-xl);
+}
+
+.join-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.join-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.join-title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.join-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.join-error {
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 118, 117, 0.1);
+  color: var(--danger);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.join-submit {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.loading-dots span {
+  animation: fadeIn 1s infinite;
+}
+
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@media (max-width: 480px) {
+  .join-card { padding: 28px 20px; }
+  .join-title { font-size: 1.6rem; }
+}
